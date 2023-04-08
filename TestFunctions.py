@@ -5,11 +5,11 @@ def main():
     TestOperatingSystem()
 
 def TestOperatingSystem():    
-    from CustomFunctions import GetOperatingSystem  
+    from CustomFunctions import GetOneDriveRoot  
 
 
-    varPlatform = GetOperatingSystem()
-    print(varPlatform)
+    varRoot = GetOneDriveRoot()
+    print(varRoot)
     
 
 
