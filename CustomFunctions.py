@@ -2,15 +2,25 @@
 
 def main():
 
-    GetOperatingSystem()
+    GetOneDriveRoot()
 
-def GetOperatingSystem():    
+def GetOneDriveRoot():    
     import platform
 
 
     varPlatform = platform.system()
     #print(varPlatform)
-    return varPlatform
+
+  #strRootFolder = 'C:/Users/chris/OneDrive/RITS/DCC/PaySlips/Unlocked/'
+
+    #strRootFolder =  '/Users/chrisrae/Library/CloudStorage/OneDrive-Personal/RITS/DCC/PaySlips/Unlocked/'
+    if varPlatform == 'Darwin':
+            strOneDriveRoot = '/Users/chrisrae/Library/CloudStorage/OneDrive-Personal/'
+    
+    elif varPlatform == 'Microsoft':
+            strOneDriveRoot = 'C:/Users/chris/OneDrive/RITS/DCC/PaySlips/Unlocked/'
+
+    return strOneDriveRoot
 
 
 if __name__ == "__main__":
