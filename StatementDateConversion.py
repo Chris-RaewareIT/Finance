@@ -7,6 +7,9 @@ Created on Sat Dec  3 14:06:14 2022
 import re
 import shutil
 import os
+from CustomFunctions import GetOneDriveRoot  
+varRoot = GetOneDriveRoot()
+    
 
 def create_folder(strFolderPath):
 
@@ -20,6 +23,9 @@ def create_folder(strFolderPath):
 def main():
 
     ListObjectsInRootFolder()
+    
+
+    
 
 def amendFileName(srcfile_name,strAccountCode):  
     strConvertedDate = ''
@@ -146,6 +152,7 @@ def getFolderobjects(parDirectory):
 def ListObjectsInRootFolder():
     
     
+    
 
 
     # Get the Folders and files in the root folder  
@@ -154,9 +161,9 @@ def ListObjectsInRootFolder():
     # strAccountCode = 'hfxsav'
     # strAccountCode = 'Barclaycard'
     # strAccountCode = 'Amex'
-    strAccountCode = 'ITCurrent'
+    # strAccountCode = 'ITCurrent'
     
-    # strAccountCode = 'ITSavings'
+    strAccountCode = 'ITSavings'
     # strAccountCode = 'BarclaysCurrent'
     
     
@@ -190,12 +197,23 @@ def ListObjectsInRootFolder():
     elif strAccountCode == "ITCurrent":
         #C:\Users\chris\OneDrive\Finances\Stmt\Business\ITCurrent 70728829
         #C:\Users\chris\OneDrive\Finances\Stmt\Personal\Beki\BarclayCard
-        strRootFolder = 'C:/Users/chris/OneDrive/Finances/Stmt/Business/ITCurrent 70728829'
+
+        # strRootFolder = 'C:/Users/chris/OneDrive/Finances/Stmt/Business/ITCurrent 70728829'
+        
+        strStatementFolder = 'Finances/Stmt/Business/ITCurrent 70728829'
+        
+        strRootFolder = varRoot + strStatementFolder
+        
+
         #strOrigFormat = '%d%m%Y'
     elif strAccountCode == "ITSavings":
         #C:\Users\chris\OneDrive\Finances\Stmt\Business\ITCurrent 70728829
         #C:\Users\chris\OneDrive\Finances\Stmt\Personal\Beki\BarclayCard
-        strRootFolder = 'C:/Users/chris/OneDrive/Finances/Stmt/Business/ITActive 03133923'
+        # strRootFolder = 'C:/Users/chris/OneDrive/Finances/Stmt/Business/ITActive 03133923'
+        
+        strStatementFolder = 'Finances/Stmt/Business/ITActive 03133923'
+        
+        strRootFolder = varRoot + strStatementFolder
         
         
        #C:\Users\chris\OneDrive\Finances\Stmt\Personal\Beki\BarclaysCurrent
@@ -221,7 +239,7 @@ def ListObjectsInRootFolder():
     for srcFile in lstObjects:
         srcfile_name = srcFile.replace(strRootFolder,"")
         srcfile_name = srcfile_name[1:]
-        print(srcfile_name)
+        # print(srcfile_name)
 
         #file_name = file_name.replace('NASA Umbrella Ltd Payroll for Chris Rae, ','')
         
