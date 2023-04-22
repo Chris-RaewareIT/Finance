@@ -18,7 +18,7 @@ def GetOneDriveRoot():
             strOneDriveRoot = '/Users/chrisrae/Library/CloudStorage/OneDrive-Personal/'
     
     elif varPlatform == 'Microsoft':
-            strOneDriveRoot = 'C:/Users/chris/OneDrive/RITS/DCC/PaySlips/Unlocked/'
+            strOneDriveRoot = 'C:/Users/chris/OneDrive/'
 
     return strOneDriveRoot
 
