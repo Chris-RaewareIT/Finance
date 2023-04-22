@@ -150,11 +150,11 @@ def ListObjectsInRootFolder():
 
     # Get the Folders and files in the root folder  
     # strAccountCode = 'Clarity'
-    strAccountCode = 'hfxrca'
+    # strAccountCode = 'hfxrca'
     # strAccountCode = 'hfxsav'
     # strAccountCode = 'Barclaycard'
     # strAccountCode = 'Amex'
-    # strAccountCode = 'ITCurrent'
+    strAccountCode = 'ITCurrent'
     
     # strAccountCode = 'ITSavings'
     # strAccountCode = 'BarclaysCurrent'
@@ -216,10 +216,12 @@ def ListObjectsInRootFolder():
     
     #print(strRootFolder)
     lstObjects = getFolderobjects(strRootFolder)
+    # print(lstObjects)
     
     for srcFile in lstObjects:
         srcfile_name = srcFile.replace(strRootFolder,"")
         srcfile_name = srcfile_name[1:]
+        print(srcfile_name)
 
         #file_name = file_name.replace('NASA Umbrella Ltd Payroll for Chris Rae, ','')
         
